@@ -41,8 +41,8 @@ public class Kampfase : MonoBehaviour
         antallWave = 1;
         antallFiender = 0;
 
-        ventMedGruppe = 15f;
-        ventMedFiende = 4f;
+        ventMedGruppe = 2f;
+        ventMedFiende = 3f;
 
     }
 
@@ -83,7 +83,7 @@ public class Kampfase : MonoBehaviour
     public void sjekkOmAlleFienderErDrept()
     {
         // henter antallet fiender som finnes i spillverden
-
+        //antallVikingerAaDrepe == 0 && spawnedeFiender == 0
         // hvis antall fiender å drepe og antall fiender i spillverden er 0, 
         if (antallVikingerAaDrepe == 0 && spawnedeFiender == 0)
         {

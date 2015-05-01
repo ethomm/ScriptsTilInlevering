@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class LandsbyHelse : MonoBehaviour {
 
     // script referanser
     private Landsby landsby;
-	public GameOver gameOver;
 	public bool isGameOver;
+	public Text finalscore;
+	private MenuGui menugui;
+	private FaseGUI fasegui;
+
 
 	void Awake(){
-		gameOver = GameObject.Find ("gameController").GetComponent<GameOver> ();
-		isGameOver = gameOver.erGameOver;
+		menugui = GameObject.Find ("ScriptHolder").GetComponent<MenuGui> ();
+		fasegui = GameObject.Find ("ScriptHolder").GetComponent<FaseGUI> ();
+		isGameOver = false;
 	}
     void Start()
     {
@@ -32,9 +36,11 @@ public class LandsbyHelse : MonoBehaviour {
 
     public void Die()
 	    {
-		if (!gameOver) {
-
-			gameOver.gameOverTime ();
+		if (!isGameOver) {
+			finalscore.text = GameManager.instance.antallPoeng.ToString();
+			menugui.GameOver ();
+			fasegui.slotContainer.SetActive (false);
+			fasegui.fiendeTeller.SetActive (false);
 			isGameOver = true;
 		}
     }

@@ -3,7 +3,11 @@ using System.Collections;
 
 public class HashIDs : MonoBehaviour 
 {
+	/* Dette dokumenet holder på referansen til parameterne som er satt som forutsetninger
+	* for animasjoner og anomasjons overganger i de forskjellige animatorController
+	*/
 
+	
 	public int dagbool;
 	public int fasebool;
 	public int soloppgang;

@@ -15,13 +15,17 @@ public class MenuGui : MonoBehaviour {
 	public GameObject gameover;
 	public InputField playerName;
 	public Camera mainCamera;
+	public GameObject norskErValgt;
+	public GameObject engelskErValgt;
 
 	private GameManager gameManager;
 	public bool pause = false;
 	private string typedPlayerName;
+	private SetSprak setSprak;
 
 	void Awake(){
 		gameManager = gameObject.GetComponent<GameManager> ();
+		setSprak = GameObject.Find ("LanguageManager").GetComponent<SetSprak> ();
 		GoBack ();
 	}
 
@@ -103,13 +107,25 @@ public class MenuGui : MonoBehaviour {
 		gameGui.SetActive (true);
 	}
 
+	public void setEngelsk(){
+		setSprak.ByttSprak ("eng");
+		norskErValgt.SetActive (false);
+		engelskErValgt.SetActive (true);
+	}
+
+	public void setNorsk(){
+		setSprak.ByttSprak ("nor");
+		norskErValgt.SetActive (true);
+		engelskErValgt.SetActive (false);
+	}
+
 	//Pause game
 	//Blir kalt på av RTSCameraScriptet
 	public void PauseGame(){
 
 		if (!pause){
 			pauseMenu.SetActive (true);
-			Time.timeScale = 0.000001f; 
+			Time.timeScale = 0f; 
 			pause = true;
 		}
 		else{

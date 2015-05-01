@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour {
 	
 
 	public void gameOverTime(){
+		Debug.Log("Kanskje ikke hit Kommerhit");
 		finalscore.text = GameManager.instance.antallPoeng.ToString();
 		menugui.GameOver ();
 		fasegui.slotContainer.SetActive (false);

@@ -41,6 +41,7 @@ public class TextBoxRefrence : MonoBehaviour {
 	public Text settingMenuTitel;
 	public Text settingMenuNosetting;
 	public Text settingMenuGoBack;
+	public Text settingVelgSprak;
 
 	//Exit Game Menu
 	public Text exitGameTitel;

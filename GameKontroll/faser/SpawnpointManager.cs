@@ -35,8 +35,8 @@ public class SpawnpointManager : MonoBehaviour {
 		//antallWave = 1;
 		//antallFiender = 0;
 		
-		ventMedGruppe = 15f;
-		ventMedFiende = 4f;
+		ventMedGruppe = 2f;
+		ventMedFiende = 3f;
 	}
 	
 	public void settSpawnpointLys(){
@@ -45,27 +45,20 @@ public class SpawnpointManager : MonoBehaviour {
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			antallSpawnpoints = 1;
 		}
-		else if(level>3 && level < 7){
+		else if(level>6 && level < 12){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
-			antallSpawnpoints = 2;
-		}else if(level>7 && level < 14){
-			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
-			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
-			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
 			antallSpawnpoints = 3;
-		}else if(level>14 && level <20){
+		}else if(level>12 && level < 20){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
-			spawnpoint4.GetComponent<Spawnpoint>().tennLys();
 			antallSpawnpoints = 4;
 		}else if(level>20 && level <30){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint4.GetComponent<Spawnpoint>().tennLys();
-			spawnpoint5.GetComponent<Spawnpoint>().tennLys();
 			antallSpawnpoints = 5;
 		}else if(level>30 && level <45){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
@@ -73,9 +66,16 @@ public class SpawnpointManager : MonoBehaviour {
 			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint4.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint5.GetComponent<Spawnpoint>().tennLys();
-			spawnpoint6.GetComponent<Spawnpoint>().tennLys();
 			antallSpawnpoints = 6;
-		}else if(level>45 && level <65){
+		}else if(level>45 && level <60){
+			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
+			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
+			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
+			spawnpoint4.GetComponent<Spawnpoint>().tennLys();
+			spawnpoint5.GetComponent<Spawnpoint>().tennLys();
+			spawnpoint6.GetComponent<Spawnpoint>().tennLys();
+			antallSpawnpoints = 7;
+		}else if(level>60 && level <70){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
@@ -83,8 +83,8 @@ public class SpawnpointManager : MonoBehaviour {
 			spawnpoint5.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint6.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint7.GetComponent<Spawnpoint>().tennLys();
-			antallSpawnpoints = 7;
-		}else if(level>65){
+			antallSpawnpoints = 8;
+		}else if(level>70){
 			spawnpoint1.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint2.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint3.GetComponent<Spawnpoint>().tennLys();
@@ -93,7 +93,7 @@ public class SpawnpointManager : MonoBehaviour {
 			spawnpoint6.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint7.GetComponent<Spawnpoint>().tennLys();
 			spawnpoint8.GetComponent<Spawnpoint>().tennLys();
-			antallSpawnpoints = 8;
+			antallSpawnpoints = 9;
 		}
 
 	}

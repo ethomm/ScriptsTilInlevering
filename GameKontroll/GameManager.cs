@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
     public float nedteller;
     public float resetNedteller;
     public bool erForberedelsesFase = false;
-    public int antallPenger = 10000;
+    public int antallPenger = 1000;
     public int antallPoeng = 0;
-	public string sprak = "Engelsk";
-	public int startpenger = 10000;
+	public int startpenger = 1000;
 	public string playerName;
 	public Text player;
+	public Text pengeTekst;
 
     // lister
 
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 	//For å resette spillet
 	private Kampfase kampfase;
 	private FasebytteGraphics fasebyttegraphics;
+	private FaseGUI faseGUI;
 	//private CameraSwitching cameraSwitch;
 	private MenuGui menuGui;
 	public GameObject village;
@@ -58,14 +59,15 @@ public class GameManager : MonoBehaviour
         }
 
         runde =0;
-        nedteller = 90f;
+        nedteller = 40f;
         resetNedteller = 40f;
 
 		fasebyttegraphics = GameObject.Find ("gameController").GetComponent<FasebytteGraphics>();
 		kampfase = GetComponent<Kampfase> ();
 		//cameraSwitch = GetComponent<CameraSwitching> ();
 		menuGui = GetComponent<MenuGui> ();
-		gameOver = GameObject.Find ("gameController").GetComponent<GameOver>();
+		gameOver = GetComponent<GameOver>();
+		faseGUI = GetComponent<FaseGUI> ();
     }
 
     void Start()
@@ -91,9 +93,12 @@ public class GameManager : MonoBehaviour
 		kampfase.slettAlleFiender();
 		fjernForsvarsElementer ();
 		antallPoeng = 0;
+		runde = 1;
+		faseGUI.rundeText.text = "# " + runde.ToString()+" ";
 		antallPenger = startpenger;
+		penger.pengeTekst.text = antallPenger.ToString () + " ";
 		player.text = playerName;
-		nedteller = 90;
+		nedteller = resetNedteller;
 
 		if (menuGui.pause) {
 			menuGui.PauseGame();
@@ -101,6 +106,7 @@ public class GameManager : MonoBehaviour
 		village.GetComponent<Landsby> ().Awake ();
 		gameOver.erGameOver = false;
 		village.GetComponent<LandsbyHelse> ().isGameOver = false;
+		faseGUI.slotContainer.SetActive (true);
 	}
 
 	public void fjernForsvarsElementer(){
