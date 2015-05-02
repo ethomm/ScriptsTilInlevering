@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 public class FiendeHealthBar : MonoBehaviour {
 
+	/* Dette skriptet er basert på samme skript som forsvarelementer har for sine healthbars
+	 */
+
 	public Slider heltbar;
 	private float health;
 	private Fiende fiende;

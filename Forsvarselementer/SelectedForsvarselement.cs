@@ -51,10 +51,6 @@ public class SelectedForsvarselement : MonoBehaviour
     {
         if (erValgt && GameManager.instance.erForberedelsesFase)
         {
-
-
-		
-
             Vector2 targetPos;
             targetPos = Camera.main.WorldToScreenPoint(transform.position);
 

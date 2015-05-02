@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class ForsvarselementManager : MonoBehaviour
 {
+	/* Denne klassen er en "super" klasse for forsvarlementer. Den holder på de forskjellige forsvarlementene, prisene og om elementer
+	 * er tillatt å kjøpe eller ikke
+	 */
     // basert på kode fra https://www.youtube.com/watch?v=OuqThz4Zc9c
     // 
 	private TextBoxRefrence tb;

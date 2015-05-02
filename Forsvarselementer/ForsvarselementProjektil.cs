@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class ForsvarselementProjektil : MonoBehaviour
-{
+{	/* Dette skriptet jåndterer hva som skjer når et prosjektil treffer et annet objekt i spillverdenen
+	 */
     public float skade;
 
     // kjører når projektilen kolliderer med gameobject
@@ -20,8 +21,8 @@ public class ForsvarselementProjektil : MonoBehaviour
             Destroy(gameObject);
 
         }
-        // hvis den treffer spill-flaten
-        if (col.transform.gameObject.tag == "Ground")
+        // hvis den treffer spill-flaten eller andre statiske objekter
+        if (col.transform.gameObject.tag == "LandskapsObjekter")
         {
             // sletter projektilen
             Destroy(gameObject);

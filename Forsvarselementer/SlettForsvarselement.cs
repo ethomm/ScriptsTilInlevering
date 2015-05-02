@@ -3,6 +3,10 @@ using System.Collections;
 
 public class SlettForsvarselement : MonoBehaviour
 {
+	/* Dette skriptet håndterer sletting/salg av forsvarselementer
+	 * Basert på hvilken level forsvarelmentet har, også da hvor mye spilleren har brukt av
+	 * gull på å oppgradere forsvarselmentet, får spilleren proposjonalt tilbake halvparten av pengene
+	 */
     private int oppgraderingVerdi;
     private int level;
 

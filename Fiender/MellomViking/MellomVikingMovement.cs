@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class MellomVikingMovement : MonoBehaviour {
-
+	/* Denn klassen håndter bevegelsene til objektet stor viking
+	 */
+	
+	//Referanse variabler
 	private NavMeshAgent nav;
 	private Animator anim;
 	private HashIDs hash;
@@ -13,10 +16,12 @@ public class MellomVikingMovement : MonoBehaviour {
 	
 
 	void Awake(){
+		//Fyller variablene med referanser
 		nav = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
 		hash = GameObject.Find ("gameController").GetComponent<HashIDs> ();
 		angrep = GetComponent<FiendeAngrep> ();
+		//Kjører konstruktøren
 		animSetup = new MellomVikinAnimatorSetup (anim, hash);
 	}
 	
@@ -24,12 +29,10 @@ public class MellomVikingMovement : MonoBehaviour {
 		angriper = angrep.angriper;
 		NavAnimSetup ();
 	}
-
+	//Sender infromasjon til animatoren
 	void NavAnimSetup(){
 		float speed;
-
 		speed = nav.speed;
-
 		animSetup.Setup (speed, angriper);
 		
 	}

@@ -2,6 +2,11 @@
 using System.Collections;
 
 public class SpawnpointManager : MonoBehaviour {
+	/* Denne klassen håndterer hvor fiendene blir spawnet
+	 * Spawningen er basert på hvilket nivå/runde spilleren er kommet til
+	 */
+
+	//Henter inn de forskjellige spawnpointene i verdenen
 	public GameObject spawnpoint1;
 	public GameObject spawnpoint2;
 	public GameObject spawnpoint3;
@@ -10,13 +15,14 @@ public class SpawnpointManager : MonoBehaviour {
 	public GameObject spawnpoint6;
 	public GameObject spawnpoint7;
 	public GameObject spawnpoint8;
-
+	
 	private int antallFienderPerWave;
 	//private int antallWave;
 	//private int antallFiender;
 	private float ventMedGruppe;
 	private float ventMedFiende;
 
+	//Refferanser
 	private GameManager gameManager;
 	private Kampfase kampfase;
 	private int level;
@@ -31,14 +37,12 @@ public class SpawnpointManager : MonoBehaviour {
 		gameManager = GameObject.Find ("ScriptHolder").GetComponent<GameManager> ();
 		kampfase = GameObject.Find ("ScriptHolder").GetComponent<Kampfase> ();
 
-		antallFienderPerWave = 3;
-		//antallWave = 1;
-		//antallFiender = 0;
-		
+		antallFienderPerWave = 3;		
 		ventMedGruppe = 2f;
 		ventMedFiende = 3f;
 	}
-	
+
+	//Funksjon som tenner lys basert på hvilken runde/nivå/level spilleren er på
 	public void settSpawnpointLys(){
 		level = gameManager.runde;
 		if(level < 3){
@@ -98,11 +102,13 @@ public class SpawnpointManager : MonoBehaviour {
 
 	}
 
-
+	//Spawner fiender
 	public IEnumerator spawnFiender()
 	{
+		//Henter antall runder
 		level = gameManager.runde;
 
+		//Setter på lys
 		settSpawnpointLys ();
 		// for antall runder som har gått skal det kjøres en egen for loop
 		for (int i = 0; i < GameManager.instance.runde; i++)
@@ -117,6 +123,7 @@ public class SpawnpointManager : MonoBehaviour {
 			// det er ikke lenger første wave av fiender
 			erForsteWave = false;
 			// det velges et eget spawnpoint for hver gruppe (wave) av fiender i per kampfase
+			// Dette velges basert på hvor mange spawnpoints det er og det kjøres en random range metode
 			int randomSpawnpoint = Mathf.FloorToInt(Random.Range(1, antallSpawnpoints));
 			// denne loopen kjøres for hver fiende vi har i en gruppe (wave)
 			for (int j = 0; j < antallFienderPerWave; j++)
@@ -141,6 +148,7 @@ public class SpawnpointManager : MonoBehaviour {
 		}
 	}
 
+	//Metode for å holde på de forskjellige spawnpointsene
 	void SpawnFiende(int i, GameObject fiende){
 		int caseSwitch = i;
 		switch (caseSwitch)
@@ -166,6 +174,7 @@ public class SpawnpointManager : MonoBehaviour {
 		}
 	}
 
+	//Metode for å velge tilfeldig fiende basert på hvor mange spawnpoints som er aktive
 	private GameObject RandomFiende(){
 		if (antallSpawnpoints <= 2) {
 			return gameManager.fiende;
@@ -188,6 +197,7 @@ public class SpawnpointManager : MonoBehaviour {
 		}
 	}
 
+	//Setter om det er første fase eller ikke
 	public void ErForsteFase(bool b){
 		erForsteWave = b;
 	}

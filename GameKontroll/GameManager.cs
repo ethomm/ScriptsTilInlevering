@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 	//private CameraSwitching cameraSwitch;
 	private MenuGui menuGui;
 	public GameObject village;
-	private GameOver gameOver;
+
 
 
     void Awake()
@@ -64,9 +64,7 @@ public class GameManager : MonoBehaviour
 
 		fasebyttegraphics = GameObject.Find ("gameController").GetComponent<FasebytteGraphics>();
 		kampfase = GetComponent<Kampfase> ();
-		//cameraSwitch = GetComponent<CameraSwitching> ();
 		menuGui = GetComponent<MenuGui> ();
-		gameOver = GetComponent<GameOver>();
 		faseGUI = GetComponent<FaseGUI> ();
     }
 
@@ -76,7 +74,7 @@ public class GameManager : MonoBehaviour
         poeng = GetComponent<Poeng>();
     }
 
-
+	//Metode for å starte et nytt spill
 	public void StartNewGame(string player){
 		erForberedelsesFase = true;
 		gameHasStarted = true;
@@ -84,6 +82,7 @@ public class GameManager : MonoBehaviour
 		ResetSpill ();
 	}
 
+	// Metode for å resette spillet, uten å måtte resette scenen
 	public void ResetSpill(){
 		if (fasebyttegraphics.getErDag()) {
 		}else{
@@ -103,11 +102,11 @@ public class GameManager : MonoBehaviour
 			menuGui.PauseGame();
 		}
 		village.GetComponent<Landsby> ().Awake ();
-		gameOver.erGameOver = false;
 		village.GetComponent<LandsbyHelse> ().isGameOver = false;
 		faseGUI.slotContainer.SetActive (true);
 	}
 
+	//Metode for å fjerne alle forsvarselementer i spillverdenen
 	public void fjernForsvarsElementer(){
 		// henter antall fiender i fiendeholderen
 		int childs = forsvarelementholder.childCount;

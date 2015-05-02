@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class RTSCamera : MonoBehaviour {
-	
+	/* Dette skriptet håndterer bevegelsen til kamera
+	 * Skriptet er løst basert på http://forum.unity3d.com/threads/rts-camera-script.72045/
+	 * Men er blitt endret en del siden den ble kopiert inn
+	 */
 	
 	public float ScrollSpeed = 15;
 	

@@ -19,7 +19,7 @@ public class FiendeProjektil : MonoBehaviour
 
         }
         // hvis den treffer spill-flaten
-        if (col.transform.gameObject.tag == "Ground")
+        if (col.transform.gameObject.tag == "LandskapsObjekter")
         {
             // sletter projektilen
             Destroy(gameObject);

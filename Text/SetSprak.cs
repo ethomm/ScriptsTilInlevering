@@ -30,7 +30,7 @@ public class SetSprak : MonoBehaviour {
 		lang = en.lang;
 		SettSprak ();
 	}
-
+	//Metode som endrer språk basert på hva som blir sendt med metoden
 	public void ByttSprak (string sprak){
 		if (sprak == "eng") {
 			lang= en.lang;

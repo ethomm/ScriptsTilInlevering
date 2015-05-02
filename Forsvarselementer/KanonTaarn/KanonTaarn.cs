@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class KanonTaarn : Forsvarselement
-{
+{	
+	/* Dette skriptet brukes ikke
+	 */
 
     private Forsvarselement forsvarselement;
 

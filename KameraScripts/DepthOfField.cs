@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class DepthOfField : MonoBehaviour {
+	/* Dette skriptet skaper en effekt av depth of field i kameraet.
+	*  I dette skriptet har jeg brukt  tourtorialen til https://www.youtube.com/watch?v=d1GnMVKkinQ
+	*/
 	public Transform opprinnelig;//Hvor kameraet starter å fokusere
 	public GameObject target;//Følger etter Rayen kameraet sender ut
 

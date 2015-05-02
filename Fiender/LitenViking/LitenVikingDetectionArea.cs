@@ -19,7 +19,7 @@ public class LitenVikingDetectionArea : MonoBehaviour {
 			litenVikingAngrep.Target(target, true);
 		}
 	}
-	//Dersom fiendern forsvinner ut av detectionon sonen settes target til null
+	//Dersom fiendern forsvinner ut av detectionon sonen settes target til null, landsbyen forsvinner ikke
 		void OnTriggerExit(Collider other){
 			if (other.gameObject.transform.tag == "Forsvarselement") {
 				target = null;

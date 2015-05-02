@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LandsbyAngrep : MonoBehaviour
 {
+	/* Dette skriptet blir ikke lenger brukt, siden landsbyen ikke kan angripe
+	 */
     private float tid;
     private bool angriper = false;
 

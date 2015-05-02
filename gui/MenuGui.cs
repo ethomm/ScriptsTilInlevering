@@ -3,7 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class MenuGui : MonoBehaviour {
+	/* Klasse som håndterer menyene i spillet
+	 */
 
+	//Legger inn alle menuyene og menyelementer
 	public GameObject apningsmeny;
 	public GameObject loadMeny;
 	public GameObject setting;
@@ -52,7 +55,7 @@ public class MenuGui : MonoBehaviour {
 			apningsmeny.SetActive(true);
 		}
 	}
-
+	//Metode for new game meny
 	public void NewGameMenU(){
 		pauseMenu.SetActive (false);
 		apningsmeny.SetActive (false);
@@ -60,43 +63,45 @@ public class MenuGui : MonoBehaviour {
 		newGameMenu.SetActive (true);
 	}
 
+	// Metode for å vise settingsmeny
 	public void SettingMenu(){
 		pauseMenu.SetActive (false);
 		apningsmeny.SetActive (false);
 		setting.SetActive (true);
 	}
-
+	//Metode for å vise loadgame meny
 	public void LoadGame(){
 		pauseMenu.SetActive (false);
 		apningsmeny.SetActive (false);
 		loadMeny.SetActive (true);
 	}
-
+	//Metode for å vise save game menu
 	public void SaveGameMenu(){
 		pauseMenu.SetActive (false);
 		saveGameMenu.SetActive (true);
 	}
 
+	//Metode for å hente spillernavn
 	public void PlayerName(){
 		typedPlayerName = playerName.text;
 	}
-
+	//metode for å forlate spillet
 	public void LeaveGame(){
 		pauseMenu.SetActive (false);
 		apningsmeny.SetActive (false);
 		gameover.SetActive (false);
 		exitMenu.SetActive (true);
 	}
-
+	//Metode for å avslutte spillet
 	public void QuitGame(){
 		Application.Quit();
 	}
-
+	//game over metode
 	public void GameOver(){
 		gameover.SetActive (true);
 		gameGui.SetActive (false);
 	}
-
+	//Starte spill metode
 	public void StartGame(){
 
 		mainCamera = Camera.main;
@@ -106,13 +111,13 @@ public class MenuGui : MonoBehaviour {
 		newGameMenu.SetActive (false);
 		gameGui.SetActive (true);
 	}
-
+	//Metode for å sette språk til engelsk 
 	public void setEngelsk(){
 		setSprak.ByttSprak ("eng");
 		norskErValgt.SetActive (false);
 		engelskErValgt.SetActive (true);
 	}
-
+	//Metode for å sette språk til norsk
 	public void setNorsk(){
 		setSprak.ByttSprak ("nor");
 		norskErValgt.SetActive (true);

@@ -2,7 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 public class LandsbyHelse : MonoBehaviour {
-
+	/* Dette skriptet håndterer heldsen til landsbyen
+	 * I motsetning til forsvarselmenetene vil ikke landbyen fjernes dersom helsen går til 0
+	 * men spillet vil være tapt og spillet er game over. Logikk for Game Over blir derfor også kjørt.
+	 */
     // script referanser
     private Landsby landsby;
 	public bool isGameOver;
@@ -36,6 +39,7 @@ public class LandsbyHelse : MonoBehaviour {
 
     public void Die()
 	    {
+		//Kjører game over logikk
 		if (!isGameOver) {
 			finalscore.text = GameManager.instance.antallPoeng.ToString();
 			menugui.GameOver ();

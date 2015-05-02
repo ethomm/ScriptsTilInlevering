@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Kampfase : MonoBehaviour
 {
+	/* Dette skriptet håndterer kampfasen
+	 */
     public int antallFienderPerWave;
     public int antallWave;
     public int antallFiender;
@@ -48,8 +50,11 @@ public class Kampfase : MonoBehaviour
 
     void Update()
     {
+		// setter gui teskt på hvor mange fiender som skal drepes
 		faseGUI.fienderIgjen.text = antallVikingerAaDrepe.ToString();
+		//Antall fiender sette fra spawnmanager
 		antallFiender = spawnpointManager.antallfiender;
+		//Antall fiender som er igjen på brettet hentes fra FiendeHolder.child count
         spawnedeFiender = fiendeHolder.transform.childCount;
         // dersom det ikke er forbereldesfase
         if (!GameManager.instance.erForberedelsesFase)
@@ -83,7 +88,6 @@ public class Kampfase : MonoBehaviour
     public void sjekkOmAlleFienderErDrept()
     {
         // henter antallet fiender som finnes i spillverden
-        //antallVikingerAaDrepe == 0 && spawnedeFiender == 0
         // hvis antall fiender å drepe og antall fiender i spillverden er 0, 
         if (antallVikingerAaDrepe == 0 && spawnedeFiender == 0)
         {

@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class ForsvarselementHelse : MonoBehaviour
-{
+{	/* Dette skriptet håndterer forsvarelmentets helse og inneholder metoder som forteller om forsvarelmentet er død eller ikke
+	* samt metode for om forsvarelmentet mottar skade fra fiender
+	 */
+
     // script referanser
     private Forsvarselement forsvarselement;
 
@@ -24,6 +27,11 @@ public class ForsvarselementHelse : MonoBehaviour
 			StartCoroutine("Die");
         }
     }
+
+	/* Her kommer det en liten bugfix
+	 * For at fienden skal oppfatte exit trigger flyttes objektet bort fra trigger og der etter
+	 * blir destroyed
+	 */
 
 	public IEnumerator Die()
     {

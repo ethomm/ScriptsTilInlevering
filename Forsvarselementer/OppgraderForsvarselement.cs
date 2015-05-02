@@ -85,8 +85,6 @@ public class OppgraderForsvarselement : MonoBehaviour
         forsvarselement.skade *= 1.5f;
         forsvarselement.helse *= 1.5f;
 
-        // gir skyterange-gameobject ny størrelse
-
         // fjerner oppgraderingskostnad fra penger
         GameManager.instance.penger.fjernPenger(oPris);
     }

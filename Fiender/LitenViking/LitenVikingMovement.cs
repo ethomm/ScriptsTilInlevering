@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LitenVikingMovement : MonoBehaviour 
 {
+	/* Dette skripet setter funksjonen til den lille vikingen
+	 */
 	private NavMeshAgent nav;
 	private Animator anim;
 	private HashIDs hash;
@@ -22,7 +24,7 @@ public class LitenVikingMovement : MonoBehaviour
 		angrep = GetComponent<LitenVikingAngrep> ();
 
 		originalSpeed = nav.speed;
-
+		//Kjører konstruktøren fra LitenViking AnimatorSetup
 		animSetup = new LitenVikingAnimatorSetup (anim, hash);
 	}
 
@@ -32,14 +34,14 @@ public class LitenVikingMovement : MonoBehaviour
 	}
 
 
-
+	//Kjører funksjonen som styrer animasjonen
 	void NavAnimSetup(){
 		float speed;
 		float health;
 
 		health = fiende.helse;
 		speed = nav.speed;
-
+		//Siden den lille vikingen slår med øks er den avhengig av å ikke bevegeseg. Farten blir derfor satt til null
 		 if (angriper) {
 			nav.speed = 0f;
 		} else {

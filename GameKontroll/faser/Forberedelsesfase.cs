@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Forberedelsesfase : MonoBehaviour
-{
+{	
+	/* Denne klassen håndterer forberedelsesfasen
+	 */
     // script referanser
     private FaseGUI faseGUI;
 	private SpawnpointManager spawnManager;

@@ -2,16 +2,21 @@
 using System.Collections;
 
 public class okseSkript : MonoBehaviour {
+	/* Dette skriptet er koblet på den lillevikingens øks
+	 * den reigstrer treff og spiller av en lyd når den treffer et forsvarselement
+	 */
 
-	private int skade;
-	private float tidmellomAngrep = 0;
-	private Fiende fiende;
-	public AudioClip oks;
-	private AudioSource source;
+	//Variabler som holder på referanser
+	private int skade; //Skade som øksa kan ta
+	private float tidmellomAngrep = 0; //tid mellom angrep hentes fra parent
+	private Fiende fiende; //referanse til skript
+	public AudioClip oks;//Lyd som skal spilles
+	private AudioSource source; //Lydkilden som er på spillobjektet
 	
 
 
 	void Awake(){
+		//Setter referansene
 		fiende = GetComponentInParent<Fiende> ();
 		skade = fiende.skade;
 		tidmellomAngrep = fiende.tidMellomAngrip;

@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Forsvarselement : MonoBehaviour {
+	/*Denne klassen holder på variablene til forsvarselementet som holder dette skriptet
+	*/
 
     public int oppgraderingKostnad = 1000;
     public int level = 1;

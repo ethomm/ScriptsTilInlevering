@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ForsvarselementPlacement : MonoBehaviour
 {
-
+	/* Denne klassen hånterer plasseringen av forsvarelmentene
+	 */
     // basert på kode vist her: https://www.youtube.com/watch?v=OuqThz4Zc9c
 
     public bool erPlassert;
@@ -123,6 +124,11 @@ public class ForsvarselementPlacement : MonoBehaviour
     // sjekker om vi kan plassere gameobjektet
     bool erGyldigPosisjon()
     {
+		/* Her er noe av koden kommentert ut fordi vi ikke har hatt tid til å skille mellom forsvarelementer som kan og ikke kan plassers på paths
+		 * Vi har i stede for i denne versjon valgt å si at de kan plassers hvorsom helst
+		 * Det vil i fremtiden også være ønskelig å sjekke om ønsket plassering også er på brettet, hvor per nå, spilleren kan plassere 
+		 * forsvarselementer utenfor spillverdenen
+		 */
         // hvis listen med kolliderte gameobjekter er større enn 0  
        /* if (placeableForsvarselement.colliders.Count > 0)
         {

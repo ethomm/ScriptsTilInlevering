@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class FaseSkifte : MonoBehaviour
 {
-    public List<GameObject> fienderListe = new List<GameObject>();
+	/* Denne klassen håndterer faseskifte
+	 */
 
     // script referanser
     private Forberedelsesfase forberedelsesfase;
@@ -49,7 +50,7 @@ public class FaseSkifte : MonoBehaviour
 				fasebyttegraphics.byttFase ();
 
 			}
-			// 
+			//Skifter fase
 			if (GameManager.instance.nedteller <= 0f && GameManager.instance.erForberedelsesFase) {
 				GameManager.instance.erForberedelsesFase = false;
 
@@ -58,7 +59,7 @@ public class FaseSkifte : MonoBehaviour
 		}
 
     }
-
+	//Metode for å skifte fase
     public void SkiftFase(bool b)
     {
         if (b)

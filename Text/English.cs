@@ -3,10 +3,18 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 public class English  : MonoBehaviour {
+	/* Denne classen setter Engelsk språk på de teskst boksene som ikke endres basert på
+	* utvikling av spillet
+	* Ordlisten er basert på nøkler som kan hentes ut. 
+	* Nøklene kobles til den teksten som skal oversettes
+	* ("NØKKEL", "Oversettelse")
+	*/
 
-
+	//lager en variabel som holder på ordlisten
 	public Dictionary <string, string> lang = new Dictionary<string, string>();
+	//Populerer ordlisten
 	public void RunLanguage(){
+		//Legger til oversettelser i listen
 		//Gui items
 		lang.Add("POINTS", "Points:");
 		lang.Add("GOLD" ,"Gold:");

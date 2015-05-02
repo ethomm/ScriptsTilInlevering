@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class pilPrefab : MonoBehaviour {
+	/* Skript som håndtere pilens fart og rekkevidde
+	 */
 	//Variabler for fart og rekkevidde
 	private float fart = 1000;
 	private float rekkevide = 600;

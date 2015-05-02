@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class kanonkule : MonoBehaviour {
+	/* Dette skripet hånterer farten og rekkevidden til kanonkulen
+	 * Det setter også bevegelsen på kanonkula
+	 */
 	//Variabler for fart og rekkevidde
 	private float fart = 1500;
 	private float rekkevide = 1200;
@@ -13,7 +16,7 @@ public class kanonkule : MonoBehaviour {
 		transform.Translate (Vector3.forward * Time.deltaTime * fart);
 		//Fart ganger tid er av standen
 		avstand += Time.deltaTime * fart;
-		//Dersom avstanden blir lenger enn rekkevidden på pilen ødelegges den.
+		//Dersom avstanden blir lenger enn rekkevidden på kanonkula ødelegges den.
 		if (avstand >= rekkevide) {
 			Destroy(gameObject);
 		}
