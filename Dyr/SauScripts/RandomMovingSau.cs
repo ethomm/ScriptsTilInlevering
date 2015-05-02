@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class RandomMovingSau : MonoBehaviour {
+	/* Dette skriptet tar seg av bevegelsen til sauen på brettet.
+	* for å sørge for at hver sau beveger seg forskjellig er det brukt en del Random.Range
+	* Både for å endre retning og tid imellom hver retingnsendring
+	*/
 
 	private float makslimit = 2510f; //Setter to bariabler for mak verdier og minimumsverdier. Disse refererer til maks og min koordinater på spillbrettet
 	private float minlimit = -2510f;
@@ -13,12 +17,13 @@ public class RandomMovingSau : MonoBehaviour {
 	public bool landet = false; //Boolverdi for om sauen har landet
 	public bool starteAaGaa = false; //Om sauen kan starte å gå eller ikke
 	public float maksOppRotasjon = 20.0f; //MaksRotasjon sauen kan ha oppover. (Dette for å rette opp i glitcher)
-	public float randomTid;
-	public AudioClip bah;
-	public AudioSource source;
+	private float randomTid; // variabel som holder på sauen tilfedige tid for retningsendring
+	public AudioClip bah; //Holder på klibbet BÆÆÆÆ klippet til sauen som spilles når den har rotert
+	public AudioSource source; //lyskilden
 
 
 	void Awake(){
+		//Henter lydkildekomponetet som er lagt på sauen
 		source  = GetComponent<AudioSource> ();
 
 	}
@@ -88,7 +93,7 @@ public class RandomMovingSau : MonoBehaviour {
 	void VilkaarligRetning(){
 		retning = Random.Range(0f, 360f); //Velger tilfeldig tall mellom 0 og 360
 		rotating = true; //Nå som valgt retning er gjort kan sauen rotere
-		source.PlayOneShot(bah);
+		source.PlayOneShot(bah);//Spiller av lyden etter sauen har rotert
 	}
 	//Denne funksjonen fikser en glitch med at sauene ender på rompa og snurrer rundt
 	void SjekkRotasjonsFeil(){

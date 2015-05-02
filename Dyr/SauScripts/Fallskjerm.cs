@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class Fallskjerm : MonoBehaviour {
+	/* Dette skripet tar for seg falskjerm funksjonen til sauen
+	* og er basert på Unity tourtorialen om raycasting med noe modifikasjoner
+	*/
 
 	public GameObject fallskjerm; //Modellen av fallskjermen legges inn i Inspector
 	public float fallskjermEffekt; //Hvor stor effekt fallskjermen skal ha (drag)

@@ -78,7 +78,6 @@ public class GameManager : MonoBehaviour
 
 
 	public void StartNewGame(string player){
-
 		erForberedelsesFase = true;
 		gameHasStarted = true;
 		playerName = player;

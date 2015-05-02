@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class FallskjermFarge : MonoBehaviour {
+	/* Dette skriptet tar seg av valg av fallskjerm til de forskjellige sauene
+	* de forskjellige texturene legges inn i editoren til spillet
+	* Hver sau får tildelt en fallskjerm ved starten av hvert spill
+	*/
 
 	public Texture[] textures; //Oppretter en liste som det kan legges til texturer i, via inspector
 	public Renderer rend; //Lagrer en Render variabel som holder på teksturene

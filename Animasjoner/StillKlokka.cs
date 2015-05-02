@@ -5,7 +5,9 @@ using System;
 
 public class StillKlokka : MonoBehaviour {
 
-	DateTime tidnaa; //Definerer data typen for å hente ut tidskoden i systemet
+
+
+	private DateTime tidnaa; //Definerer data typen for å hente ut tidskoden i systemet
 	//Lager to variabler som vil returnere en int
 	private int TimeNaa; //En for Time
 	private int MinuttNaa; //En for minutt

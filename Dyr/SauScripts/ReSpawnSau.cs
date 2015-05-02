@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class ReSpawnSau : MonoBehaviour {
-
+	/* Denne Classen flytter sauen fra der den har falt av brettet til et 
+	* tilfeldig sted over kartet igjen
+	*/
 
 	public float maksFallAvstand = -1000f;//Setter avstanden for hvor langt en sau kan falle
 	private float Akse1; //Lager en variabel som holder på en en tilfeldig gitt variabel
